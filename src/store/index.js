@@ -5,6 +5,7 @@ import { cashReducer } from "./cashReducer";
 import { customerReducer } from "./customerReducer";
 // Импортируем функцию composeWithDevTools
 import { composeWithDevTools } from 'redux-devtools-extension';
+// Импортируем thunk для работы с асинхронными запросами
 import thunk from "redux-thunk";
 // Создаём новый объект rootReducer и вызываем функцию combineReducers, которая принимает параметром объект
 const rootReducer = combineReducers({
@@ -25,6 +26,7 @@ export const store = configureStore({
      * Далее устанавливаем расширение в браузере "Redux DevTools".
      * Затем нажимаем клавишу F12 и переходим во вкладку Redux.
      * В этой вкладке можно посмотреть текущее состояние, находящиеся внутри каждого редюсера поля и внесенные изменения при помощи action.
+     * Используем функцию applyMiddleware, где указываем thunk.
      */
     enhancer: composeWithDevTools(applyMiddleware(thunk))
 })

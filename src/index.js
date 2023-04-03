@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 // Импортируем компонент Provider
 import { Provider } from "react-redux";
+// Импортируем переменную store
 import {store} from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
